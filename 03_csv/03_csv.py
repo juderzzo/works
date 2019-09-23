@@ -1,7 +1,7 @@
 #Jude Rizzo
 #Sofdev1 pd9
 #K06 -- Divine your Destiny!
-#2019--9--11
+#2019--9--17
 import csv
 import random
 
