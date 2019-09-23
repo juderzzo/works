@@ -1,8 +1,3 @@
-#Jude Rizzo
-#Sofdev1 pd9
-#K02 -- NO-body expects the Spanish Inquisition!
-#2019--9--11
-
 import random
 
 KREWES = {
@@ -22,4 +17,3 @@ key = input("Enter a team name (orpheus, rex, or endymion): ")
 
 #print out the random student name
 print(random.choice(KREWES[key]))
-#random.choice is a built in function that randomly selects an element from a list
