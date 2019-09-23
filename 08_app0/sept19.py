@@ -11,6 +11,10 @@ def template():
     x = [0,1,1,2,3,5,8]
     return "coll = " + str(x)
 
+@app.route("/../../")
+def work():
+    return "route 3"
+
 if __name__ == "__main__":
   app.debug = True
   app.run()
