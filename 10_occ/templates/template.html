@@ -19,11 +19,13 @@
   <tr>
     <th>Occupation</th>
     <th>Percentage</th>
+    <th>Link</th>
   </tr>
   {% for key in bunch %}
     <tr>
       <td>{{key}}</td>
-      <td>{{bunch.get(key)}}</td>
+      <td>{{bunch.get(key)[0]}}</td>
+      <td><a href = "{{bunch.get(key)[1]}}">Find Your Job!</a></td>
     </tr>
   {% endfor %}
   </table>

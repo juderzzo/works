@@ -1,24 +1,24 @@
-Job Class,Percentage
-Management,6.1
-Business and Financial operations,5
-Computer and Mathematical,2.7
-Architecture and Engineering,1.7
-"Life, Physical and Social Science",0.9
-Community and Social Service,1.6
-Legal,0.8
-"Education, training and library",6.1
-"Arts, design, entertainment, sports and media",1.7
-Healthcare practioners and technical,5.5
-Healthcare support,2.8
-Protective service,2.3
-Food preparation and serving,8.3
-Building and grounds cleaning and maintenance,3.7
-Personal care and service,4
-Sales,10.2
-Office and administrative support,15.1
-"Farming, fishing and forestry",0.6
-Construction and extraction,4.3
-"Installation, maintenance and repair",3.8
-Production,6.1
-Transportation and material moving,6.5
-Total,99.8
+Job Class,Percentage,Link
+Management,6.1,https://www.careerbuilder.com/jobs-management
+Business and Financial operations,5,https://www.linkedin.com/jobs/finance-jobs-new-york?position=1&pageNum=0
+Computer and Mathematical,2.7,https://www.mathjobs.org/jobs
+Architecture and Engineering,1.7,https://archinect.com/jobs/region/US/NY/new-york
+"Life, Physical and Social Science",0.9,https://www.indeed.com/q-Social-Science-jobs.html
+Community and Social Service,1.6,https://www.socialservice.com/
+Legal,0.8,https://www.google.com/search?q=legal+jobs&oq=legal+jobs&aqs=chrome..69i57j0l5.1135j0j4&sourceid=chrome&ie=UTF-8
+"Education, training and library",6.1,https://www.schoolspring.com/
+"Arts, design, entertainment, sports and media",1.7,https://www.indeed.com/q-Sports-Media-jobs.html
+Healthcare practioners and technical,5.5,https://www.simplyhired.com/search?q=healthcare&l=new+york%2C+ny&job=Jl_yoR2Eb0MpWm0WUIFiQsgeJkZfI4FKrEVBmNPCnWbQQqNtkSxf_A
+Healthcare support,2.8,https://www.simplyhired.com/search?q=nursing&l=new+york%2C+ny&job=zkK_d3XlIoBY4B6qNm5cpWsoShvJ9E3l1hXq6hu5ptKqxR_GNl4gWA
+Protective service,2.3,https://www.indeed.com/q-Protective-Services-jobs.html
+Food preparation and serving,8.3,https://www.simplyhired.com/search?q=chef&l=new+york%2C+ny
+Building and grounds cleaning and maintenance,3.7,https://www.simplyhired.com/search?q=plumbing&l=New+York%2C+NY&job=lqvSn_cxGe-Enif4lrkMHDeD_-0y5ciUBXNLJ_AFVFynibUIB105BQ
+Personal care and service,4,http://www.careers.org/occupations/field/39/personal-care-and-service
+Sales,10.2,https://www.simplyhired.com/search?q=sales&l=New+York%2C+NY&job=w1eLi6MfAoVD5bMKh8P9DX3ROpeJl-xpX6h031s0mjp1ukLolo647A
+Office and administrative support,15.1,https://www.simplyhired.com/search?q=administrative&l=New+York%2C+NY&job=NF3jxG8GJzN8_W_f2r6N1K1fTHCGNHjbbOvzSrfHWHII9PdbbnRfKQ
+"Farming, fishing and forestry",0.6,https://www.simplyhired.com/search?q=farming&l=New+York%2C+NY&job=WFwToUMmipP0AkQlvWWHWMwTu4o9Tu5fhT5fB1o0ZOWdXB2qA7GgGA
+Construction and extraction,4.3,https://www.simplyhired.com/search?q=construction&l=New+York%2C+NY&job=Y5o25OfP2LgP3T7Qf68edaAyUWcjEMD8iD-3JiEViKDB9-gRZAwuZA
+"Installation, maintenance and repair",3.8,https://www.indeed.com/q-Maintenance-&-Repair-jobs.html
+Production,6.1,https://www.simplyhired.com/search?q=production&l=New+York%2C+NY&job=Y5o25OfP2LgP3T7Qf68edaAyUWcjEMD8iD-3JiEViKDB9-gRZAwuZA
+Transportation and material moving,6.5,https://www.dot.ny.gov/jobs
+Total,99.8,https://www.simplyhired.com/

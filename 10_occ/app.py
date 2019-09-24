@@ -23,16 +23,18 @@ def randomOccupation():
         for rows in reader:
             if linenum != 0:
                 #associating the percentages in the csv
-                allOccupation[rows[0]] = float(rows[1])
-                
+                allOccupation[rows[0]] = (float(rows[1]),rows[2])
+                print(allOccupation)
             linenum += 1
         counter = 0
 
-        randomnum = random.uniform(0,allOccupation.get("Total"))
+        randomnum = random.uniform(0,99.8)
+        #picks a number from 0 to 99.8, and we will see which number
+        #in the percentages it lands on with resepct to jobs
 
         for key, value in allOccupation.items():
-            counter += value
-            #up the counter
+            counter += value[0]
+            #now, think o this as going around a pie chart until we reach the desired number
             if randomnum <= counter:
                 return key
 
@@ -41,6 +43,7 @@ def randomOccupation():
 
 @app.route("/occupyflaskst")
 def getAJob():
+
     return render_template(
     #set itup with the template
         'template.html',
