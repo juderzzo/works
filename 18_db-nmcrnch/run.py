@@ -10,7 +10,6 @@ c.execute("DROP TABLE IF EXISTS courses")
 c.execute("CREATE TABLE IF NOT EXISTS students (id INTEGER PRIMARY KEY, name INTEGER, age STRING)")
 c.execute("CREATE TABLE IF NOT EXISTS courses (id INTEGER PRIMARY KEY, code STRING, mark INTEGER, other_id INTEGER)")
 
-
 with open("courses.csv") as file:
     next(file)
     reader = csv.reader(file)
