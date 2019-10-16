@@ -1,33 +1,64 @@
-import sqlite3
+#Calvin Chu
+#SoftDev
+#Average
+#Oct 2019
 
-db = sqlite3.connect("database.db")
-c = db.cursor()
-
-# create the average table
-c.execute("DROP TABLE IF EXISTS stu_avg")
-c.execute("CREATE TABLE IF NOT EXISTS stu_avg (id INTEGER PRIMARY KEY, student_id INTEGER, average FLOAT)")
-
-
-# get a student's average based on their id
-def get_student_average(id):
-    r = c.execute("SELECT mark FROM courses WHERE other_id = " + str(id)).fetchall()
-    s = 0
-    for i in r:
-        s += i[0]
-    return s / len(r)
+import sqlite3   #enable control of an sqlite database
+import csv       #facilitate CSV I/O
 
 
-# get all student ids
-all_student_ids = c.execute("SELECT id FROM students").fetchall()
+DB_FILE="discobandit.db"
 
-for student_id in all_student_ids:
-    student_id = student_id[0]
-    avg = get_student_average(student_id)
-    c.execute("INSERT INTO stu_avg (student_id, average) VALUES (" + str(student_id) + ", " + str(avg) + ")")
+db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
+c = db.cursor()               #facilitate db ops
 
+#==========================================================
 
-db.commit()
-db.close()
+#Drop table if it already exists
+c.execute('DROP TABLE IF EXISTS stu_avg')
+#Create table if it does
+c.execute('''CREATE TABLE IF NOT EXISTS stu_avg (id INTEGER, avg REAL)''')
 
-if __name__ == '__main__':
-    pass
+#Looks up each student’s grades and stores the list of tuples in variable db_reader
+c.execute('''SELECT name, mark, students.id
+        FROM students, courses
+        WHERE students.id = courses.id''')
+db_reader = c.fetchall()
+#Computes each student’s average and returns a dictionary of {id:avg}
+def avg(list):
+    d = {}
+    prev_id = list[0][2]
+    sum = 0
+    count = 0
+    for row in list:
+        if row[2] == prev_id:
+            sum += row[1]
+            count += 1
+        else:
+            d[prev_id] = sum / count
+            sum = 0
+            prev_id = row[2]
+            count = 1
+            sum += row[1]
+    d[prev_id] = sum / count
+    return d
+#Inserts all the ids and averages from dictionary returned by function into stu_avg table
+for id, avg in avg(db_reader).items():
+    c.execute('INSERT INTO stu_avg VALUES (?, ?)', (id, avg))
+
+#Runs SELECT command to print student’s name, id, and average
+command = '''SELECT name, students.id, avg
+        FROM students, stu_avg
+        WHERE students.id = stu_avg.id'''        # gets name, id, and avg
+c.execute(command)    # run SQL statement
+print(c.fetchall())
+
+#My attempt to facilitate adding to courses table
+def addToCourses(name, mark, id):
+    c.execute('INSERT INTO courses VALUES (?, ?, ?)', (name, mark, id))
+
+#==========================================================
+
+db.commit() #save changes
+
+db.close()  #close database
