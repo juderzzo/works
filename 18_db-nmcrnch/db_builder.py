@@ -1,7 +1,8 @@
-#Calvin Chu
+#Calvin Chu and Jude Rizzo
 #SoftDev
 #My Populated Skeleton :: SQLITE3 BASICS
 #Oct 2019
+#Team Giraffe
 
 import sqlite3   #enable control of an sqlite database
 import csv       #facilitate CSV I/O
