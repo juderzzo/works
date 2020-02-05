@@ -1,0 +1,38 @@
+<!DOCTYPE html> <meta charset="utf-8"/>
+<html>
+<body>
+
+<canvas height = "600" width = "600" id = "slate" alt = "failure" style = "border:1px solid #000000;">
+  <button id = "1000"> Toggle button </button>
+
+  <script>
+  var x = 0
+  var mouseX = 0
+  var mouseY = 0
+  function getMousePos(mouseEvent){
+  if(mouseEvent){
+    mouseX = mouseEvent.screenX
+    mouseY = mouseEvent.screenY
+s
+  }
+}
+
+  var ctx = c.getContext("2d")
+  var button = getElementById('1000')
+  button.addEventListener('click', function(){x ++ })
+  var canv = getElementById('slate')
+  canv.addEventListener('click', function() {
+    if(x % 2 == 1):
+      ctx.fillRect(0,0,100,100)
+    if(x % 2 == 0):
+      ctx.arc
+  })
+
+
+
+  </script>
+</canvas>
+
+</body>
+
+</html>
