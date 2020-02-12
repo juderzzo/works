@@ -5,7 +5,26 @@ const canvas = document.getElementById("playground");
 const status = document.getElementById("status");
 const clear = document.getElementById("clear");
 const ctx = canvas.getContext("2d");
+var lastx;
+var lasty;
 
+canvas.addEventListener('mousedown', e => {
+  var x = e.offsetX;
+  var y = e.offsetY;
+  ctx.beginPath();
+  ctx.arc(x, y, 10, 0, 2 * Math.PI);
+  ctx.fill();
+  ctx.closePath();
+  if(lastx!=null){
+    ctx.beginPath();
+    ctx.moveTo(lastx,lasty);
+    ctx.lineTo(e.offsetX,e.offsetY);
+    ctx.closePath();
+    ctx.stroke();
+  }
+  lastx=e.offsetX;
+  lasty=e.offsetY;
+});
 
 var toggle = function(e){
 	if (curr_state === "circle"){
