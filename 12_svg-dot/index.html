@@ -1,0 +1,51 @@
+<!-- Ivan Galakhov && Jude Rizzo - Team Kovid
+SoftDev pd1 and pd9
+K12 -- Connect the Dots
+2020-04-29 -->
+
+<head>
+    <title>12_svg-dot</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<center>
+    <br>
+    <h2>Connect the dots?</h2>
+    <p><i>By Team Kovid</i></p>
+    <svg width="500" height="500" style="border: black 5px solid;" id="clicker">
+    </svg>
+    <br><br>
+    <button id="clear-btn">clear screen</button>
+</center>
+<script>
+    var px = -1;
+    var py = -1;
+
+    $("#clicker").click((e) => {
+        let x = e.offsetX;
+        let y = e.offsetY;
+
+        $("#clicker").append(
+            "<circle cx=\"" + x + "\" cy=\"" + y + "\" r=\"2\" stroke=\"black\" stroke-width=\"4\" fill=\"white\" />"
+        );
+
+        if (px != -1 && py != -1) {
+            $("#clicker").append(
+                "<line x1=\"" + px + "\" y1=\"" + py + "\" x2=\"" + x + "\" y2=\"" + y + "\" stroke=\"black\" stroke-width=\"2\"/>"
+            );
+        }
+        $("#clicker").html($("#clicker").html());
+
+
+        console.log(px, py);
+
+        px = x;
+        py = y;
+    });
+    $("#clear-btn").click(()=>{
+        $("#clicker").html("");
+        px = -1;
+        py = -1;
+    })
+</script>
+</body>
