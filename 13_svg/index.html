@@ -1,0 +1,70 @@
+<!-- Ivan Galakhov && Jude Rizzo - Team Kovid
+SoftDev pd1 and pd9
+K13 -- Ask Circles [Change || Die]
+2020-04-30 -->
+
+<head>
+    <title>13_svg</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<center>
+    <br>
+    <h2>Ask Circles</h2>
+    <p><i>By Team Kovid</i></p>
+    <svg width="500" height="500" style="border: black 5px solid;" id="clicker">
+    </svg>
+    <br><br>
+    <button id="clear-btn">clear screen</button>
+</center>
+<script>
+    var preventDraw = false;
+
+    const refreshSVG = () => {
+        $("#clicker").html($("#clicker").html());
+        $(".blue-circle").off();
+        $(".blue-circle").click((e) => {
+            preventDraw = true;
+            //$(this).delete();
+            $(e.target).attr("fill", "orange");
+            $(e.target).attr("stroke", "orange");
+            $(e.target).attr("class", "orange-circle");
+            $(e.target).off();
+            refreshSVG();
+        });
+        $(".orange-circle").off();
+        $(".orange-circle").click((e) => {
+            preventDraw = true;
+
+
+            $(e.target).remove();
+            makeBlueCircle(Math.floor(Math.random()*500), Math.floor(Math.random()*500));
+
+            refreshSVG();
+        });
+
+    };
+    const makeBlueCircle = (x, y) => {
+        $("#clicker").append(
+            "<circle cx=\"" + x + "\" cy=\"" + y + "\" r=\"25\" stroke=\"blue\" stroke-width=\"4\" fill=\"blue\" class=\"blue-circle\"/>"
+        );
+    };
+
+    $("#clicker").click((e) => {
+        let x = e.offsetX;
+        let y = e.offsetY;
+
+        if(!preventDraw)
+            makeBlueCircle(x, y);
+
+        preventDraw = false;
+
+        refreshSVG();
+    });
+
+
+    $("#clear-btn").click(() => {
+        $("#clicker").html("");
+    });
+</script>
+</body>
